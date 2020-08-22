@@ -13,6 +13,13 @@
   <br>
   <br>
 
+
+  <%= f.label :category_id %>
+  <%= f.collection_select :category_id, Category.order(:name), :id, :name, { include_blank: true } %>
+
+  <br>
+  <br>
+
   <%= f.submit 'Сохранить' %>
 
 <% end %>

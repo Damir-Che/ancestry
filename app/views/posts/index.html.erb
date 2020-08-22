@@ -4,6 +4,9 @@
 
   <h4>title: <%= link_to p.title, post_path(p) %></h4>
   <p>body: <%= p.body %></p>
+  <% if p.category.name. present? %>
+    <%= link_to p.category.name, p.category %>
+  <% end %>
   <hr>
 
 <% end %>

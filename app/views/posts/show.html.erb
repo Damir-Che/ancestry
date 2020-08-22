@@ -2,5 +2,10 @@
 
 <h4><%= @post.title %></h4>
 <p><%= @post.body %></p>
+<% if @post.category.name. present? %>
+  <%= link_to @post.category.name, @post.category %>
+<% end %>
+|
 <small><%= link_to 'Редактировать', edit_post_path(@post) %></small>
+|
 <small><%= link_to 'Удалить', post_path(@post), method: :delete %></small>
