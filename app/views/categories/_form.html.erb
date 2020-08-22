@@ -7,9 +7,8 @@
   <br>
   <br>
 
-  <%#= f.label :body %>
-  <%#= f.text_field :body %>
-
+  <%= f.label :parent_id %>
+  <%= f.collection_select :parent_id, @categories, :id, :name, { include_blank: true }, class: 'form-control' %>
   <br>
   <br>
 

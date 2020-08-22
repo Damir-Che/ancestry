@@ -19,7 +19,7 @@
       <tr>
         <td><%= index + 1 %></td>
         <td><%= category.name %></td>
-<!--        <td><%#= category.parent.name if category.parent.present? %></td>-->
+        <td><%= category.parent.name if category.parent.present? %></td>
         <td>
           <%= link_to 'Изменить', edit_category_path(category) %>
           <%= link_to 'Удалить', category_path(category), method: :delete, data: { confirm: 'Вы уверены?' } %>

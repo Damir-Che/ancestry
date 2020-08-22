@@ -12,6 +12,7 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    @categories = Category.all
   end
 
   def create
@@ -24,6 +25,7 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+    @categories = Category.where("id != #{@category.id}").order(:name)
   end
 
   def update
@@ -34,6 +36,7 @@ class CategoriesController < ApplicationController
     end
   end
 
+
   def destroy
     @category.destroy
     redirect_to categories_path
@@ -43,7 +46,7 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :parent_id)
   end
 
   def set_category
