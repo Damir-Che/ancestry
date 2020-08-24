@@ -1,0 +1,8 @@
+<ul>
+  <% categories.each do |c, children| %>
+    <li>
+      <%= link_to c.name, c  %>
+      <%= render 'shared/submenu', categories: cheldren if children.present? %>
+    </li>
+  <% end %>
+</ul>

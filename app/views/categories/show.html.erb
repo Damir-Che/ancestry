@@ -1,0 +1,8 @@
+<h1><%= @category.name %></h1>
+
+<section id="posts">
+  <%= render 'posts/list' %>
+</section>
+
+<%= will_paginate @posts, renderer: 'BootstrapPaginationHelper::LinkRenderer' %>
+

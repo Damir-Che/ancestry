@@ -1,0 +1,14 @@
+<div>
+  <hr>
+  <br>
+  <h2>Категории</h2>
+  <ul>
+    <% Category.roots.each do |c| %>
+      <li>
+        <%= link_to c.name, c  %>
+        <%= render 'shared/submenu_categories', categories: c.root.descendants.arrange %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+

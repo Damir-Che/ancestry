@@ -1,0 +1,15 @@
+<% @posts.each do |p| %>
+
+  <h4><%= p.title %></h4>
+  <p><%= p.body %></p>
+  <% if p.category.name. present? %>
+    <%= link_to p.category.name, p.category %>
+  <% end %>
+  |
+  <small><%= link_to 'Редактировать', edit_post_path(p) %></small>
+  |
+  <small><%= link_to 'Удалить', post_path(p), method: :delete %></small>
+
+<% end %>
+
+
