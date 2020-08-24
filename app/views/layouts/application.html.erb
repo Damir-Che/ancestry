@@ -11,10 +11,19 @@
 
   <body>
 
-  <%= link_to 'Главная', posts_path %>
-  <%= link_to 'Новый пост', new_post_path %>
-  <%= link_to 'Категории', categories_path %>
+  <div style="border: 1px solid red">
+    <%= link_to 'Главная', posts_path %>
+    <%= link_to 'Новый пост', new_post_path %>
+    <%= link_to 'Категории', categories_path %>
+    | |
+    <% if user_signed_in? %>
+      <%= link_to 'Выход', destroy_user_session_path, method: :delete %>
+    <% else %>
 
+      <%= link_to 'Вход', new_user_session_path %>
+      <%= link_to 'Регистрация', new_user_registration_path %>
+    <% end %>
+  </div>
     <%= yield %>
 
   <div>

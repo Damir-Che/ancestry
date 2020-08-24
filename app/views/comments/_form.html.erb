@@ -1,0 +1,14 @@
+
+<%= form_for ([@post, @post.comments.build]) do |f| %>
+
+
+
+            <%= f.text_area :body, class: 'form-control comment_comment_body', placeholder: "Комментарии" %> <br>
+
+
+            <%= f.submit 'Сохранить', class: 'btn btn-primary pull-right' %>
+
+
+
+
+<% end %>

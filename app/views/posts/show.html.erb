@@ -9,3 +9,15 @@
 <small><%= link_to 'Редактировать', edit_post_path(@post) %></small>
 |
 <small><%= link_to 'Удалить', post_path(@post), method: :delete %></small>
+
+<hr>
+<section style="border: 2px solid darkred">
+  <h3>комментарии</h3>
+  <div>
+    <%= render 'comments/form' %> <!-- паршал- для формы -->
+    <hr>
+    <h4><%= @post.comments.count %> Комминтарии</h4>
+    <%= render @post.comments %> <!-- паршал- для всех коментов  -->
+
+  </div>
+</section>
